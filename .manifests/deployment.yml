@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-vue-app-deployment
+  namespace: my-vue-app
+  labels:
+    app: my-vue-app
+spec:
+  selector:
+    matchLabels:
+      app: my-vue-app
+  template:
+    metadata:
+      labels:
+        app: my-vue-app
+    spec:
+      containers:
+        - name: my-vue-app
+          image: docker.io/sebcibaric/my-vue-app:latest
+          ports:
+            - containerPort: 80
