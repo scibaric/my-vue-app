@@ -4,9 +4,9 @@ metadata:
   name: my-vue-app-ingress
   namespace: my-vue-app
   annotations:
-    kubernetes.io/ingress.class: traefik
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
+  ingressClassName: nginx-ingress-class
   tls:
     - secretName: my-vue-app-scibaric-dev-tls
       hosts:
