@@ -6,7 +6,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
-  ingressClassName: nginx-ingress-class
+  ingressClassName: traefik
   tls:
     - secretName: my-vue-app-scibaric-dev-tls
       hosts:
