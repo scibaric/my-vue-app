@@ -14,6 +14,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Set environment variables
+        run: |
+          echo "$env.METER_READINGS_ENV_VARS" > .env
+
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:

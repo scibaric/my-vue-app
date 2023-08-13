@@ -6,11 +6,11 @@ defineProps<{ msg: string }>();
 const count = ref(0);
 
 function fetchData() {
-  fetch("https://meter-readings.scibaric.dev/api/v1/meters/1/2023").then(
-    (response) => {
-      console.log(response.json());
-    },
-  );
+  fetch(
+    `${import.meta.env.VITE_METER_READINGS_API_URL}/api/v1/meters/1/2023`,
+  ).then((response) => {
+    console.log(response.json());
+  });
 }
 </script>
 
